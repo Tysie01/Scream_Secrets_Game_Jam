@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody rb;
+    private Vector2 moveDirection;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -18,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMovement(Vector2 input)
     {
-        Debug.Log(input);
+        rb.velocity = new Vector3(input.x, 0, input.y);
     }
 
 }
